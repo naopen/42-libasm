@@ -23,9 +23,7 @@ ft_strdup:
 
 	mov rdi, rax				; コピー先 = malloc済みメモリ
 	mov rsi, rbx				; コピー元 = 元の文字列
-	push rax					; mallocの戻り値を保存
-	call ft_strcpy wrt ..plt	; 文字列をコピー
-	pop rax						; mallocの戻り値を復元
+	call ft_strcpy wrt ..plt	; 文字列をコピー（ft_strcpyはdstをraxで返す）
 
 	pop rbx						; rbxを復元
 	ret
